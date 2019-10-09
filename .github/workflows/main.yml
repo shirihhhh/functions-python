@@ -4,7 +4,7 @@
 # 3. Add this yaml file to your project's .github/workflows/
 # 4. Push your local project to your Github Repository
 
-name: FUNCTIONS_GITHUB_ACTION
+name: FUNCTIONS_PYTHON_GITHUB_ACTION
 
 on:
   push:
