@@ -17,10 +17,10 @@ jobs:
     steps:
     - name: 'Checkout Github Action'
       uses: actions/checkout@master
-    - name: 'Login via Azure CLI'
-      uses: Azure/actions/login@master
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    # - name: 'Login via Azure CLI'
+    # uses: Azure/actions/login@master
+    #   with:
+    #     creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Setup Python 3.6
       uses: actions/setup-python@v1
       with:
@@ -42,7 +42,7 @@ jobs:
         # If your function app project is not located in your repository's root
         # Please consider prefixing the project path in this package parameter
         package: '.'
-        #publish-profile: ${{ secrets.SCM_CREDENTIALS }}
+        publish-profile: ${{ secrets.SCM_CREDENTIALS }}
     #- name: 'use the published functionapp url in upcoming steps'
     #  run: |
     #    echo "${{ steps.fa.outputs.app-url }}"
