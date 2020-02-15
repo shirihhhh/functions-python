@@ -4,10 +4,13 @@ on:
   push:
     branches:
     - master
-
+    - release/*
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
     steps:
     - name: 'Checkout Github Action'
       uses: actions/checkout@master
@@ -28,7 +31,7 @@ jobs:
       uses: Azure/functions-action@v1
       id: fa
       with:
-        app-name: demo0x1234
+        app-name: demo0x1234567
         package: '.'
         publish-profile: ${{ secrets.SCM_CREDENTIALS }}
 
