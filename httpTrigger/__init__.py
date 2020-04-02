@@ -16,7 +16,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             name = req_body.get('name')
 
     if name:
-        return func.HttpResponse("It's {name} time!!!!")
+        return func.HttpResponse(f"It's {name} time!!!!")
     else:
         return func.HttpResponse(
              "Please pass a name in the query string or in the request body",
